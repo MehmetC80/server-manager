@@ -70,7 +70,7 @@ public class ServerController {
     }
 
     @GetMapping("/get/{id}")
-    public ResponseEntity<Response> getServer(@PathVariable("ip") Long id) {
+    public ResponseEntity<Response> getServer(@PathVariable("id") Long id) {
 
 
         return ResponseEntity.ok(
@@ -98,10 +98,10 @@ public class ServerController {
     }
 
 
-    @GetMapping(path = "/iamge/{fileName}", produces = IMAGE_PNG_VALUE)
+    @GetMapping(path = "/image/{fileName}", produces = IMAGE_PNG_VALUE)
     public byte[] getServerImage(@PathVariable("fileName") String fileName) throws IOException {
 
-        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "Downloads/images/" + fileName));
+        return Files.readAllBytes(Paths.get(System.getProperty("user.home") + "/Downloads/images/" + fileName));
     }
 
 
